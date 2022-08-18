@@ -1,0 +1,52 @@
+@import 'colors'
+@import 'fonts'
+@import 'my_fonts'
+@import 'button'
+
+body
+    background-color : $secondary-color
+h1
+    font-size: 3rem
+
+nav
+    background-color: $main-color
+    ul
+        list-style: none
+
+        li
+            float: left
+
+            a
+                text-decoration: none
+
+a.button
+    @include my_button($padding: 1rem)
+
+button
+    @include my_button($padding: 1rem, $color: orange)
+
+@mixin card($proportion: 0.5, $width: 300px)
+    display: flex
+    flex-direction: row
+    width: $width
+    height: $width * 2/3
+    border: 1px solid black
+    background-color: #cccccc
+
+    img
+        max-width: 100%
+        object-fit: cover
+        object-position: 50% 50% 
+    & > *:first-child
+        width: $width * $proportion
+
+    & > *:nth-child(0n+2)
+        width: $width * (1 - $proportion)
+
+    & > p
+        overflow-y: auto
+.card
+    @include card
+
+.card_big
+    @include card($proportion: 0.66,$width: 600px)

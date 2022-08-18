@@ -1,0 +1,20 @@
+{
+	"version": 3,
+	"file": "hello.css",
+	"sources": [
+		"../sass/hello.sass",
+		"../sass/colors.sass",
+		"../sass/_fonts.sass",
+		"../sass/_my_fonts.sass",
+		"../sass/_button.sass"
+	],
+	"sourcesContent": [
+		"@import 'colors';\n@import 'fonts';\n@import 'my_fonts';\n@import 'button';\n\nbody {\n    background-color : $secondary-color; }\nh1 {\n    font-size: 3rem; }\n\nnav {\n    background-color: $main-color;\n    ul {\n        list-style: none;\n\n        li {\n            float: left;\n\n            a {\n                text-decoration: none; } } } }\n\na.button {\n    @include my_button($padding: 1rem); }\n\nbutton {\n    @include my_button($padding: 1rem, $color: orange); }\n\n@mixin card($proportion: 0.5, $width: 300px) {\n    display: flex;\n    flex-direction: row;\n    width: $width;\n    height: $width * 2/3;\n    border: 1px solid black;\n    background-color: #cccccc;\n\n    img {\n        max-width: 100%;\n        object-fit: cover;\n        object-position: 50% 50%; }\n    & > *:first-child {\n        width: $width * $proportion; }\n\n    & > *:nth-child(0n+2) {\n        width: $width * (1 - $proportion); }\n\n    & > p {\n        overflow-y: auto; } }\n.card {\n    @include card; }\n\n.card_big {\n    @include card($proportion: 0.66,$width: 600px); }\n",
+		"$main-color: green;\n$secondary-color: lightgreen;\n\n",
+		"$main-font: Helvetica, Arial, sans-serif;\n$secondary-font: \"Times New Roman\", serif;\n",
+		"$main-font: Helvetica, Arial, sans-serif;\n$secondary-font: \"Times New Roman\", serif;\n",
+		"@mixin my_button($padding, $color: salmon,) {\n    display: inline-block;\n    padding: $padding;\n    background-color: $color;\n    transition: ease-in-out .5s;\n    border: 1px solid black;\n\n    &:hover {\n        background-color: rgba($color, .25); } }\n"
+	],
+	"names": [],
+	"mappings": "AAKA,AAAA,IAAI,CAAC;EACD,gBAAgB,ECLF,UAAU,GDKc;;AAC1C,AAAA,EAAE,CAAC;EACC,SAAS,EAAE,IAAI,GAAG;;AAEtB,AAAA,GAAG,CAAC;EACA,gBAAgB,ECXP,KAAK,GDmB4B;EAT9C,AAEI,GAFD,CAEC,EAAE,CAAC;IACC,UAAU,EAAE,IAAI,GAMoB;IAT5C,AAKQ,GALL,CAEC,EAAE,CAGE,EAAE,CAAC;MACC,KAAK,EAAE,IAAI,GAGmB;MAT1C,AAQY,GART,CAEC,EAAE,CAGE,EAAE,CAGE,CAAC,CAAC;QACE,eAAe,EAAE,IAAI,GAAG;;AAExC,AAAA,CAAC,AAAA,OAAO,CAAC;EIpBL,OAAO,EAAE,YAAY;EACrB,OAAO,EJoBsB,IAAI;EInBjC,gBAAgB,EAHe,MAAM;EAIrC,UAAU,EAAE,eAAe;EAC3B,MAAM,EAAE,eAAe,GJiBc;EADzC,AIdI,CJcH,AAAA,OAAO,AIdH,MAAM,CAAC;IACJ,gBAAgB,EARW,yBAAM,GAQK;;AJgB9C,AAAA,MAAM,CAAC;EIvBH,OAAO,EAAE,YAAY;EACrB,OAAO,EJuBsB,IAAI;EItBjC,gBAAgB,EJsB2B,MAAM;EIrBjD,UAAU,EAAE,eAAe;EAC3B,MAAM,EAAE,eAAe,GJoB8B;EADzD,AIjBI,MJiBE,AIjBD,MAAM,CAAC;IACJ,gBAAgB,EJiBuB,uBAAM,GIjBP;;AJuC9C,AAAA,KAAK,CAAC;EAnBF,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,KAAK,EAH6B,KAAK;EAIvC,MAAM,EAAE,KAAY;EACpB,MAAM,EAAE,eAAe;EACvB,gBAAgB,EAAE,OAAO,GAeT;EADpB,AAZI,KAYC,CAZD,GAAG,CAAC;IACA,SAAS,EAAE,IAAI;IACf,UAAU,EAAE,KAAK;IACjB,eAAe,EAAE,OAAO,GAAG;EASnC,AARI,KAQC,GARG,CAAC,AAAA,YAAY,CAAC;IACd,KAAK,EAAE,KAAoB,GAAG;EAOtC,AALI,KAKC,GALG,CAAC,AAAA,UAAW,CAAA,IAAI,EAAE;IAClB,KAAK,EAAE,KAA0B,GAAG;EAI5C,AAFI,KAEC,GAFG,CAAC,CAAC;IACF,UAAU,EAAE,IAAI,GAAG;;AAI3B,AAAA,SAAS,CAAC;EAtBN,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,KAAK,EAqBmC,KAAK;EApB7C,MAAM,EAAE,KAAY;EACpB,MAAM,EAAE,eAAe;EACvB,gBAAgB,EAAE,OAAO,GAkBwB;EADrD,AAfI,SAeK,CAfL,GAAG,CAAC;IACA,SAAS,EAAE,IAAI;IACf,UAAU,EAAE,KAAK;IACjB,eAAe,EAAE,OAAO,GAAG;EAYnC,AAXI,SAWK,GAXD,CAAC,AAAA,YAAY,CAAC;IACd,KAAK,EAAE,KAAoB,GAAG;EAUtC,AARI,SAQK,GARD,CAAC,AAAA,UAAW,CAAA,IAAI,EAAE;IAClB,KAAK,EAAE,KAA0B,GAAG;EAO5C,AALI,SAKK,GALD,CAAC,CAAC;IACF,UAAU,EAAE,IAAI,GAAG"
+}

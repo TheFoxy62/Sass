@@ -1,0 +1,9 @@
+@mixin my_button($padding, $color: salmon,)
+    display: inline-block
+    padding: $padding
+    background-color: $color
+    transition: ease-in-out .5s
+    border: 1px solid black
+
+    &:hover
+        background-color: rgba($color, .25)
